@@ -5,6 +5,8 @@ Requires jQuery core
 
 This is a branch of the dead project for stickyforms. http://www.jqbyte.com/StickyForms/
 
+For more details on usage, check out the wiki on github https://github.com/velkymx/stickyforms/wiki
+
 Options
 
 'debug': 'false', // [true/false] Enable debugging
