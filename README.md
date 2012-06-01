@@ -21,7 +21,7 @@ Options
 
 'disableIfGetSet' : '', // [$_GET var] set to the $_GET var.  If this $_GET var is present, it will automatically disable the plugin.
 
-'hiddenVals' : 'true'	// true will save hidden values, whereas false will skip them
+'hiddenVals' : 'true'	// [true/false] true will save hidden values, whereas false will skip them
 
 Usage:
 
