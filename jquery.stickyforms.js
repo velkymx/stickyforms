@@ -1,7 +1,10 @@
 /*
  * jQuery StickyForms Plugin
- * Authors: Ryan Schwartz, Joshua Giese (JQByte.com) and Forked by VELKYMX
- * Old Examples and documentation at: http://www.jqbyte.com/StickyForms/documentation.php
+ * Authors: Ryan Schwartz & Joshua Giese (JQByte.com) and Forked by VELKYMX 
+ * GitHub: https://github.com/velkymx/stickyforms
+ * Examples and documentation at: http://www.jqbyte.com/StickyForms/documentation.php
+ * Copyright (c) 2011 JQByte
+ * Version: 1.0 (1-APR-2011)
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
@@ -20,7 +23,7 @@
 				var settings = {
 					'debug': 'false', // [true/false] Enable debugging
 					'elementTypes'	: 'all', // [text,password,checkbox,radio,textarea,select-one,select-multipe,all] separate element types with comma separated values (default is all)
-					'cookieLifetime': '60', // [integer] number of days of cookie lifetime
+					'cookieLifetime': '1', // [integer] number of days of cookie lifetime
 					'disableOnSubmit': 'true', // [true/false] disable submitting the form while the form is processing
 					'excludeElementIDs': '', // [ID1,ID2] exclude element IDs with comma separated values
 					'scope'			: 'single', // [single/global] should the values be sticky only on this form (single) or across all forms on site (default is global)
@@ -113,7 +116,7 @@
 					}
 					
 					// Determine value
-					if(this[i].type == "text" || this[i].type == "select-one" || this[i].type == "textarea" || this[i].type == "password" || this[i].type == "select-multiple"){
+					if(this[i].type == "text" || this[i].type == "select-one" || this[i].type == "textarea" || this[i].type == "password" || this[i].type == "hidden" || this[i].type == "select-multiple"){
 						var setVal = $(this[i]).val();
 					}else if(this[i].type == "checkbox" || this[i].type == "radio"){
 						var setVal = this[i].checked;
@@ -167,9 +170,10 @@
 						if(scope != "global" && this.id != form){
 							continue;
 						}
+						
 
 						// Load text, select-one, password, and textarea values
-						if(this[i].type == "text" || this[i].type == "select-one" || this[i].type == "select-multiple" || this[i].type == "textarea" || this[i].type == "password"){
+						if(this[i].type == "text" || this[i].type == "select-one" || this[i].type == "select-multiple" || this[i].type == "textarea" || this[i].type == "password" || this[i].type == "hidden" ){
 							this[i].value = val;
 						}
 						
